@@ -1,4 +1,7 @@
-<div class="container-fluid" *ngFor="let use of user">
+
+<main class="container">
+
+<div *ngFor="let use of user">
   <div class="row">
      <div class="col-md-12">
         <div id="content" class="content content-full-width">
@@ -27,11 +30,11 @@
                  <!-- BEGIN profile-header-tab -->
                  <ul class="profile-header-tab nav nav-tabs">
                   <li class="nav-item"><a routerLink='' href="#profile-post" class="nav-link active show" data-toggle="tab">RETOUR</a></li>
-                    <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">POSTS</a></li>
-                    <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">ABOUT</a></li>
-                    <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">PHOTOS</a></li>
-                    <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">VIDEOS</a></li>
-                    <li class="nav-item"><a href="#profile-friends" class="nav-link" data-toggle="tab">FRIENDS</a></li>
+                    <li class="nav-item"><a href="#profile-post" class="nav-link active show" data-toggle="tab">Panier</a></li>
+                    <li class="nav-item"><a href="#profile-about" class="nav-link" data-toggle="tab">Mes adresses</a></li>
+                    <li class="nav-item"><a href="#profile-photos" class="nav-link" data-toggle="tab">Mes commandes</a></li>
+                    <li class="nav-item"><a href="#profile-videos" class="nav-link" data-toggle="tab">Contact</a></li>
+
                  </ul>
                  <!-- END profile-header-tab -->
 
@@ -41,9 +44,13 @@
      </div>
   </div>
 </div>
-<section>
+<div>
+  <h1 class="text-muted" *ngIf="cartService.get().length == 0"> Pas de produit en attente</h1>
+</div>
+<section  *ngIf="cartService.get().length > 0">
+  <h1 class=" mx-2 text-center"> En attente de validation </h1>
   <div>
-   <table class="table table-dark" >
+   <table class="table table" style="background-color: rgba(0, 0, 0, 0.233);">
      <thead>
        <tr>
 
@@ -67,3 +74,4 @@
 
   </div>
 </section>
+</main>
