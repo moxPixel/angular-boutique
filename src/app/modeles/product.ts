@@ -16,6 +16,7 @@ export class Product {
     created: Date = new Date){
 
       this.id = id;
+
       this.price = price;
       this.name = name;
       this.picture = picture;
