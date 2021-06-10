@@ -66,7 +66,7 @@
          <th scope="row">{{product.product.name}}</th>
          <td><img class="img-fluid" style="width:100px" [src]="product.product.picture" alt=""></td>
          <td>{{product.product.price}} e</td>
-         <td><a  class="btn btn-danger"><i (click)="removeProduct(product)" class="fa fa-trash "></i></a></td>
+         <td><a (click)="removeProduct(product)" class="btn btn-danger"><i class="fa fa-trash "></i></a></td>
 
        </tr>
      </tbody>
