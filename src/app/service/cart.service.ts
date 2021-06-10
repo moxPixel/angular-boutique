@@ -32,7 +32,9 @@ get(): Cart[] {
 }
 
 
-
+remove(cart: Cart): void {
+  localStorage.removeItem('cart');
+}
 clear(): void {
   localStorage.removeItem('cart');
   localStorage.removeItem('cartTotal');
