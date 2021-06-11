@@ -4,8 +4,7 @@
           <h1 class="text-center">DRESS</h1>
           <div class="container ">
             <div class="row">
-
-              <div *ngFor="let product of products"  class="col-md-3 mt-3 mx-auto card h-100">
+              <div *ngFor="let product of products" style="border:none"  class="col-md-3 mt-3 mx-auto card h-100">
                   <!-- Product image-->
                   <img class="card-img-top" [src]="product.picture" alt="..." />
                   <!-- Product details-->
@@ -19,11 +18,15 @@
                   </div>
                   <!-- Product actions-->
                   <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                      <div class="text-center"><a (click)="goToCart(product)" (click)="setActiveClass()" class="btn btn-outline-dark mt-auto" href="#">Ajouter au panier</a></div>
+                      <div class="text-center"><a (click)="goToCart(product)" (click)="setActiveClass()" class="btn btn-outline-dark mt-auto" ><i class="fa fa-cart-plus"></i> Ajouter au panier</a></div>
+               <a [routerLink]="['single-product' ,product.id]" (click)="goToSummary()"  style="color:rgb(0, 0, 0);" ><i class="fa fa-eye"></i>Voir</a>
                   </div>
               </div>
             </div>
           </div>
+<ng-template  [ngIf]="isSummary">
+
+</ng-template>
 
       </section>
       <!-- Footer-->

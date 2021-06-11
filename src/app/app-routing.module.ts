@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ProfilComponent } from './profil/profil.component';
+import { SinleProductComponent } from './sinle-product/sinle-product.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,12 @@ const routes: Routes = [
   path: 'profil',
   component: ProfilComponent
 },
+{
+  path: 'single-product/:id',
+  component: SinleProductComponent
+},
+
+
 ];
 
 @NgModule({

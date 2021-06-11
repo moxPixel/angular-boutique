@@ -10,13 +10,17 @@ import { CartService } from '../service/cart.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-product = new Product()
+
+isSummary = false;
+product = new Product();
 statusClass = 'not-active';
 products = PRODUCTS;
-nbr = [];
+
+
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.products = PRODUCTS;
   }
 
   goToCart(product: Product): void {
@@ -47,5 +51,11 @@ nbr = [];
   setActiveClass(): void {
     this.statusClass = 'active';
   }
-  
+  /**
+   * Switch view to Summary Before CartModel
+   */
+   goToSummary(): void {
+    this.isSummary = true;
+  }
+
 }

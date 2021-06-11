@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfilComponent } from './profil/profil.component';
+import { SinleProductComponent } from './sinle-product/sinle-product.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProfilComponent } from './profil/profil.component';
     HomeComponent,
     FooterComponent,
     HeaderComponent,
-    ProfilComponent
+    ProfilComponent,
+    SinleProductComponent
   ],
   imports: [
     BrowserModule,
