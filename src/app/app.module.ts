@@ -8,6 +8,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { ProfilComponent } from './profil/profil.component';
 import { SinleProductComponent } from './sinle-product/sinle-product.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -17,11 +20,14 @@ import { SinleProductComponent } from './sinle-product/sinle-product.component';
     FooterComponent,
     HeaderComponent,
     ProfilComponent,
-    SinleProductComponent
+    SinleProductComponent,
+    NavComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxPayPalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

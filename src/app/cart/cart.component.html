@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<main class="container ">
+  <h1 class="text-muted" *ngIf="cartService.get().length == 0"> Panier vide</h1>
+<section  *ngIf="cartService.get().length > 0">
+  <h1 class=" mx-2 text-center">Mon panier</h1>
+  <div>
+   <table class="table table" style="background-color: rgba(0, 0, 0, 0.233);">
+     <thead>
+       <tr>
+
+         <th scope="col">Produit</th>
+         <th scope="col">photo</th>
+         <th scope="col">prix</th>
+         <th scope="col">Action</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr  *ngFor="let product of cartService.get()">
+
+         <th scope="row">{{product.product.name}}</th>
+         <td><img class="img-fluid" style="width:100px" [src]="product.product.picture" alt=""></td>
+         <td>{{product.product.price}} e</td>
+         <td><a (click)="removeProduct(product)" class="btn btn-danger"><i class="fa fa-trash "></i></a></td>
+
+       </tr>
+     </tbody>
+   </table>
+
+  </div>
+  <hr>
+  <span class="bold"><strong>Total: {{ cartService.getTotal() }} &euro;</strong></span>
+</section>
+<section class="row">
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+</section>
+</main>
